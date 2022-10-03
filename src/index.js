@@ -1,11 +1,16 @@
-const phoneFormatter = (digits) => {
-    const stringInput = digits.toString()
-    const formattedArr = Array.from(stringInput)
-    formattedArr.splice(0, 0, '(')
-    formattedArr.splice(4, 0, ')')
-    formattedArr.splice(-4, 0, '-')
-    return formattedArr.join('')
-}
-// console.log(phoneFormatter('4448916567'))
-// console.log(phoneFormatter(4448916577))
-console.log(phoneFormatter(4155448375))
+"use strict";
+exports.__esModule = true;
+exports.phoneFormatter = void 0;
+var phoneFormatter = function (digits) {
+    var stringInput = digits.toString();
+    if (stringInput.length !== 10) {
+        return 'error: input should be 10 numbers';
+    }
+    var formattedArr = Array.from(stringInput);
+    formattedArr.splice(0, 0, '(');
+    formattedArr.splice(4, 0, ')');
+    formattedArr.splice(-4, 0, '-');
+    return formattedArr.join('');
+};
+exports.phoneFormatter = phoneFormatter;
+console.log(phoneFormatter(4155448375));
